@@ -46,28 +46,28 @@ string Getf(char c, string str){ // get characters that follow first instance of
     bool start = false;
     string result = "";
     for (int i = 0; i < str.length(); i++){
-		if(start){
-			result.push_back(str[i]);
-		}
-		if(str[i] == c){
-			start = true;
-		}
-	}
-	return(result);
+        if(start){
+            result.push_back(str[i]);
+        }
+        if(str[i] == c){
+            start = true;
+        }
+    }
+    return(result);
 
 }
 /*------------------------------------------------------------------------------------------------------------*/
 string Getb(char c, string str){ //get characters that preceed first instance of c in str
 /*------------------------------------------------------------------------------------------------------------*/
-	string result = "";
-	bool stop = false;
-	for (int i = 0; i < str.length(); i++){
-		if(str[i] == c){
-			stop = true;
-		}
-		if(!stop){
-			result.push_back(str[i]);
-		}
-	}
-	return(result);
+    string result = "";
+    bool stop = false;
+    for (int i = 0; i < str.length(); i++){
+        if(str[i] == c){
+            stop = true;
+        }
+        if(!stop){
+            result.push_back(str[i]);
+        }
+    }
+    return(result);
 }

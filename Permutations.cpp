@@ -20,16 +20,16 @@ int main(int argc, char* argv[]){
         if (lineBuffer.length() == 0)
             continue; //ignore all empty lines
         else {
-    	    vector<string> permutations;
+            vector<string> permutations;
             sort(lineBuffer.begin(), lineBuffer.end()); //prepare the string for the next step
             extend_permutation(lineBuffer, "", permutations);
-			for(int i = 0; i < permutations.size(); i++){
-			    cout << permutations[i];
-				if(i != permutations.size() - 1){
-				    cout << ",";
-				}
-			}
-			cout << "\n";
+            for(int i = 0; i < permutations.size(); i++){
+                cout << permutations[i];
+                if(i != permutations.size() - 1){
+                    cout << ",";
+                }
+            }
+            cout << "\n";
         }
     }
     return(0);
@@ -39,16 +39,16 @@ int main(int argc, char* argv[]){
 void extend_permutation(string candidates, string permutation, vector<string> &output){
 /*----------------------------------------------------------------------------------------*/
     if(candidates.length() == 1){ //base case. 
-	    permutation.append(candidates);
-		output.push_back(permutation);
-	}
-	else{
+        permutation.append(candidates);
+        output.push_back(permutation);
+    }
+    else{
         for(int i = 0; i < candidates.length(); i++){
-	        string buffer = permutation;
+            string buffer = permutation;
             buffer.push_back(candidates[i]);
-		    extend_permutation(reduce_candidates(candidates, i), buffer, output);
-	    }
-	}
+            extend_permutation(reduce_candidates(candidates, i), buffer, output);
+        }
+    }
 }
 
 /*------------------------------------------------------------*/
@@ -56,9 +56,9 @@ string reduce_candidates(string candidates, int toRemove){
 /*------------------------------------------------------------*/
     string result = "";
     for(int i = 0; i < candidates.length(); i++){
-	    if(i != toRemove){
-		    result.push_back(candidates[i]);
-		}
-	}
-	return (result);
+        if(i != toRemove){
+            result.push_back(candidates[i]);
+        }
+    }
+    return (result);
 }

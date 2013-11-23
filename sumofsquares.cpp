@@ -15,22 +15,20 @@ int main(int argc, char* argv[]){
     bool firstline = true;
     ifstream file;
     file.open(argv[1]);
-    while (!file.eof()) 
-        {
-            getline(file, lineBuffer);
-            if (lineBuffer.length() == 0)
-                continue; //ignore all empty lines
-            else 
-            {
-                if(firstline){firstline = false;}
-                else{
-                    stringstream str;
-                    str << lineBuffer;
-                    int M;
-                    str >> M;
-                    cout << NumOfSquares(M) << "\n";
-                }
+    while (!file.eof()) {
+        getline(file, lineBuffer);
+        if (lineBuffer.length() == 0)
+            continue; //ignore all empty lines
+        else{
+            if(firstline){firstline = false;}
+            else{
+                stringstream str;
+                str << lineBuffer;
+                int M;
+                str >> M;
+                cout << NumOfSquares(M) << "\n";
             }
+        }
     }
     return(0);
 }
